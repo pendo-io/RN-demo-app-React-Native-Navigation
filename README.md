@@ -108,7 +108,7 @@ Passing null or "" to the visitorId will generate an anonymous visitor id.
       PendoSDK.startSession(visitorId, accountId, visitorData, accountData);
 ```
 
-### Pendo SDK integration - IOS:
+### Pendo SDK integration - iOS:
 
 1. In the application folder, run the following commands:  
 ```
