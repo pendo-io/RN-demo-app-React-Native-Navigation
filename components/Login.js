@@ -10,13 +10,6 @@ import React from 'react';
 import {Navigation} from 'react-native-navigation';
 import {PendoSDK, NavigationLibraryType} from 'rn-pendo-sdk';
 
-// Navigation.events().registerAppLaunchedListener(() => {
-//     const navigationOptions = {library: NavigationLibraryType.ReactNativeNavigation, navigation: Navigation};
-//     const pendoKey = 'YOUR-APP-KEY';
-
-//     PendoSDK.setup(pendoKey,navigationOptions);
-// });
-
 export default function Login(props) {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
