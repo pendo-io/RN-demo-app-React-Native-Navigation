@@ -65,7 +65,7 @@ Add the following statements in the transformer:
       }
     }
 ```
-4. Add the following ```<activity>``` to the manifest in the ```<application>``` tag:  
+5. Add the following ```<activity>``` to the manifest in the ```<application>``` tag:  
 **IMPORTANT**: don't forget to replace ```"YOUR-APP-SCHEME"``` with your own app scheme. 
   
 (Android.manifest lines 25-32)
@@ -79,7 +79,7 @@ Add the following statements in the transformer:
         </intent-filter>
       </activity>
 ```
-5. In the application main file (App.js), add the following code:  
+6. In the application main file (App.js), add the following code:  
 **IMPORTANT**: don't forget to replace ```'YOUR-APP-KEY'``` with your own app key. 
   
 (App.js lines 5-12)
@@ -94,7 +94,7 @@ Navigation.events().registerAppLaunchedListener(() => {
 });
 ```
   
-6. Initialize Pendo where your visitor is being identified (e.g. login, register, etc.).  
+7. Initialize Pendo where your visitor is being identified (e.g. login, register, etc.).  
 **IMPORTANT**: The following is an example of a possible user or "visitor" logging into your application.  
 Passing null or "" to the visitorId will generate an anonymous visitor id.
 
