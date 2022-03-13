@@ -8,7 +8,7 @@ Navigation.events().registerAppLaunchedListener(() => {
     const navigationOptions = {library: NavigationLibraryType.ReactNativeNavigation, navigation: Navigation};
     const pendoKey = 'YOUR-APP-KEY';
 
-    PendoSDK.setup(pendoKey, navigationOptions, options);
+    PendoSDK.setup(pendoKey, navigationOptions);
 });
 
 export default function App(props) {
