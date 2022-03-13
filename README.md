@@ -43,7 +43,7 @@ Add Pendo Repository to the repositories section:
 ```
 
 3. In the application Android.manifest file.  
-If applicable, add the following <uses-permission> to the manifest in the <manifest> tag:
+If applicable, add the following ```<uses-permission>``` to the manifest in the ```<manifest>``` tag:
   
 (Android.manifest lines 4-5)
 ```
