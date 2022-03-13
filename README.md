@@ -70,7 +70,7 @@ Add the following statements in the transformer:
   
 (Android.manifest lines 25-32)
 ```
-  <activity android:name="sdk.pendo.io.activities.PendoGateActivity" android:launchMode="singleInstance">
+      <activity android:name="sdk.pendo.io.activities.PendoGateActivity" android:launchMode="singleInstance">
         <intent-filter>
           <action android:name="android.intent.action.VIEW"/>
           <category android:name="android.intent.category.DEFAULT"/>
