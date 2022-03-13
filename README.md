@@ -124,6 +124,69 @@ pod install
 ```
 3. In the application AppDelegate file add the following code:
     
-(
+(AppDelegate.m line 5)
+ ```
+ @import Pendo;
+ ```
+  
+(AppDelegate.m lines 42-52)
+```
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    if ([[url scheme] containsString:@"pendo"]) {
+        [[PendoManager sharedManager] initWithUrl:url];
+        return YES;
+    }
+    //  your code here ...
+    return YES;
+}
+```
+
+4. In the application metro.config.js.  
+Add the following statements in the transformer:
+  
+(metro.config.js lines 16-23)
+```
+  minifierConfig: {
+      keep_classnames: true, // Preserve class names
+      keep_fnames: true, // Preserve function names
+      mangle: {
+        keep_classnames: true, // Preserve class names
+        keep_fnames: true, // Preserve function names
+      }
+    }
+```
+
+5. In the application main file (App.js), add the following code:  
+**IMPORTANT**: don't forget to replace ```'YOUR-APP-KEY'``` with your own app key. 
+  
+(App.js lines 5-12)
+```
+import {PendoSDK, NavigationLibraryType} from 'rn-pendo-sdk';
+
+Navigation.events().registerAppLaunchedListener(() => {
+    const navigationOptions = {library: NavigationLibraryType.ReactNativeNavigation, navigation: Navigation};
+    const pendoKey = 'YOUR-APP-KEY';
+
+    PendoSDK.setup(pendoKey, navigationOptions);
+});
+```
+  
+6. Initialize Pendo where your visitor is being identified (e.g. login, register, etc.).  
+**IMPORTANT**: The following is an example of a possible user or "visitor" logging into your application.  
+Passing null or "" to the visitorId will generate an anonymous visitor id.
+
+(Login.js 34-39)
+```
+      const visitorId = 'VISITOR-UNIQUE-ID';
+      const accountId = 'ACCOUNT-UNIQUE-ID';
+      const visitorData = {Age: '25', Country: 'USA'}; // example data
+      const accountData = {Tier: '1', Size: 'Enterprise'}; // example data
+
+      PendoSDK.startSession(visitorId, accountId, visitorData, accountData);
+```
+
 ## Questions 
 You can notify us of any issues under the issues tab.
